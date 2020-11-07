@@ -1,0 +1,26 @@
+name: Deploy Server
+on:
+  push:
+    branches:
+      - master
+jobs:
+  SSH:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: root
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/www
+            git fetch --all
+            git reset --hard
+            git pull
+            echo BASE_URL=${{ secrets.BASE_URL }} > .env
+            echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} >> .env
+            docker-compose down
+            docker-compose up -d
