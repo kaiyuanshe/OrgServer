@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_supplies_goods",
+  "info": {
+    "name": "Goods",
+    "icon": "object-group"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "specification": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "amount": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 1
+    },
+    "films": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "remark": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "textile",
+        "mechanical",
+        "electric",
+        "digital"
+      ]
+    },
+    "code": {
+      "type": "string",
+      "unique": true,
+      "minLength": 12
+    }
+  }
+}

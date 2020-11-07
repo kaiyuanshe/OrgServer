@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "Account",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subject": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 5
+    },
+    "remark": {
+      "type": "text",
+      "unique": false
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "method": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "bank",
+        "PayPal",
+        "Alipay",
+        "WeChat"
+      ],
+      "required": true
+    },
+    "program": {
+      "via": "accounts",
+      "model": "program"
+    },
+    "invoices": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "property": {
+      "model": "property",
+      "via": "account"
+    },
+    "project": {
+      "model": "project"
+    },
+    "partnership": {
+      "model": "partnership",
+      "via": "account"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contributions",
+  "info": {
+    "name": "Contribution",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "assets": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "task": {
+      "model": "task",
+      "via": "contributions"
+    },
+    "evaluations": {
+      "via": "contribution",
+      "collection": "evaluation"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluations",
+  "info": {
+    "name": "Evaluation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "score": {
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 0,
+      "default": 0
+    },
+    "detail": {
+      "type": "text",
+      "unique": true,
+      "minLength": 5
+    },
+    "contribution": {
+      "model": "contribution",
+      "via": "evaluations"
+    },
+    "program": {
+      "via": "evaluations",
+      "model": "program"
+    },
+    "creator": {
+      "unique": true,
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

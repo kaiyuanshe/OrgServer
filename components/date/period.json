@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_date_periods",
+  "info": {
+    "name": "Period",
+    "icon": "calendar-week"
+  },
+  "options": {},
+  "attributes": {
+    "start_date": {
+      "type": "date",
+      "required": false
+    },
+    "end_date": {
+      "type": "date",
+      "required": false
+    },
+    "start_time": {
+      "type": "time",
+      "default": "00:00:00"
+    },
+    "end_time": {
+      "type": "time",
+      "default": "23:59:00"
+    },
+    "week": {
+      "type": "enumeration",
+      "enum": [
+        "weekdays",
+        "weekends"
+      ]
+    }
+  }
+}

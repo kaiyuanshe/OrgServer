@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "name": "Activity",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 2
+    },
+    "slogan": {
+      "type": "string",
+      "unique": true,
+      "minLength": 3
+    },
+    "banner": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "start_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "minLength": 10
+    },
+    "organizers": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "partnerships": {
+      "via": "activity",
+      "collection": "partnership"
+    }
+  }
+}

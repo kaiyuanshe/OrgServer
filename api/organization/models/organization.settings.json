@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "name": "Organization"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 2
+    },
+    "slogan": {
+      "type": "string",
+      "unique": true
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "unique": true,
+      "minLength": 10
+    },
+    "summary": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "minLength": 20
+    },
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "message_link": {
+      "type": "string",
+      "unique": true,
+      "minLength": 10
+    }
+  }
+}

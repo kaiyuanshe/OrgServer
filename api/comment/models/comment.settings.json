@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "minLength": 10
+    },
+    "program": {
+      "model": "program"
+    },
+    "comment": {
+      "model": "comment"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

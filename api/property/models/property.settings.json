@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "name": "Property"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "goods": {
+      "type": "component",
+      "repeatable": false,
+      "component": "supplies.goods",
+      "required": true
+    },
+    "account": {
+      "via": "property",
+      "model": "account"
+    },
+    "custodians": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "deprecated_at": {
+      "type": "datetime"
+    }
+  }
+}

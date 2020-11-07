@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partnerships",
+  "info": {
+    "name": "Partnership"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "sponsor",
+        "place",
+        "media",
+        "community",
+        "device",
+        "travel",
+        "vendor"
+      ],
+      "required": true
+    },
+    "level": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "activity": {
+      "model": "activity",
+      "via": "partnerships"
+    },
+    "organization": {
+      "model": "organization"
+    },
+    "account": {
+      "via": "partnership",
+      "model": "account"
+    }
+  }
+}

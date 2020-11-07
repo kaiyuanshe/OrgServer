@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "Task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 5
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "deadline": {
+      "type": "datetime",
+      "required": false
+    },
+    "contributions": {
+      "via": "task",
+      "collection": "contribution"
+    },
+    "assets": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "activity": {
+      "model": "activity"
+    },
+    "category": {
+      "model": "category"
+    },
+    "project": {
+      "model": "project"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

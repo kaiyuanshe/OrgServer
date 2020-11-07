@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/partnerships",
+      "handler": "partnership.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/partnerships/count",
+      "handler": "partnership.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/partnerships/:id",
+      "handler": "partnership.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/partnerships",
+      "handler": "partnership.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/partnerships/:id",
+      "handler": "partnership.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/partnerships/:id",
+      "handler": "partnership.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
