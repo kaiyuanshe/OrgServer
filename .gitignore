@@ -114,4 +114,4 @@ exports
 .cache
 build
 .strapi-updater.json
-extensions/documentation/
+documentation/
