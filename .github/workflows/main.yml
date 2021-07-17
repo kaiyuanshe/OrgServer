@@ -9,18 +9,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+      - name: Clean
+        run: |
+          rm -rf .git/ .gitignore .github/ .editorconfig .eslint*
+      - name: Transport
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./
+          remote: ${{ secrets.PATH }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          privateKey: ${{ secrets.SSH_KEY }}
       - name: Deploy
-        uses: appleboy/ssh-action@master
+        uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.HOST }}
-          username: root
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ~/www
-            git fetch --all
-            git reset --hard
-            git pull
+          username: ${{ secrets.USER }}
+          privateKey: ${{ secrets.SSH_KEY }}
+          command: |
+            cd ${{ secrets.PATH }}
             echo BASE_URL=${{ secrets.BASE_URL }} > .env
-            echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} >> .env
             docker-compose down
             docker-compose up -d

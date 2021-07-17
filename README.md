@@ -3,6 +3,8 @@
 **Data Server** scaffold for all kinds of **Organizations**, built on [Strapi][1]
 with the **Operation Experience** of [freeCodeCamp ChengDu community][2] & [KaiYuanShe][3].
 
+[![](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/mentioned-badge.svg)][4]
+
 ## Learning
 
 https://tech-query.me/development/headless-cms-strapi/
@@ -30,11 +32,25 @@ https://tech-query.me/development/headless-cms-strapi/
 
 ### Component
 
-|  Name  | Category |         Usage          |
-| :----: | :------: | :--------------------: |
-| Period |   Date   |       Time Range       |
-| Goods  | Supplies | Equipment or Souvenirs |
+|  Name   | Category |         Usage          |
+| :-----: | :------: | :--------------------: |
+| Period  |   Date   |       Time Range       |
+|  Goods  | Supplies | Equipment or Souvenirs |
+| Address | Location |                        |
+
+## Deployment
+
+### GitHub Actions secrets
+
+|    Name    |          Value example          |
+| :--------: | :-----------------------------: |
+|   `PATH`   |             `~/www`             |
+|   `HOST`   |        `your.server.net`        |
+|   `USER`   |             `root`              |
+| `SSH_KEY`  | (output of `cat ~/.ssh/id_rsa`) |
+| `BASE_URL` |    `https://your.server.net`    |
 
 [1]: https://strapi.io/
 [2]: https://fcc-cd.dev/
 [3]: https://kaiyuanshe.cn/
+[4]: https://github.com/strapi/awesome-strapi

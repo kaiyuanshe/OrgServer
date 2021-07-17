@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "organizations",
   "info": {
-    "name": "Organization"
+    "name": "Organization",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
@@ -26,7 +28,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "link": {
       "type": "string",
@@ -46,12 +49,34 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "message_link": {
       "type": "string",
       "unique": true,
       "minLength": 10
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.address",
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "community",
+        "enterprise",
+        "government"
+      ]
     }
   }
 }
