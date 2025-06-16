@@ -78,11 +78,12 @@ $RECYCLE.BIN/
 
 *#
 ssl
-.vscode/
 .idea
 nbproject
 public/uploads/*
 !public/uploads/.gitkeep
+.tsbuildinfo
+.eslintcache
 
 ############################
 # Node.js
@@ -96,12 +97,26 @@ results
 node_modules
 .node_history
 
+############################
+# Package managers
+############################
+
+package-lock.json
+yarn.lock
+.yarn/*
+!.yarn/cache
+!.yarn/unplugged
+!.yarn/patches
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+yarn-error.log
 
 ############################
 # Tests
 ############################
 
-testApp
 coverage
 
 ############################
@@ -111,7 +126,12 @@ coverage
 .env
 license.txt
 exports
-.cache
+dist
 build
-.strapi-updater.json
-documentation/
+.strapi*
+types/generated/
+types/client/
+types/*.ts
+types/pnpm-lock.yaml
+src/extensions/documentation/documentation/
+src/extensions/documentation/public/

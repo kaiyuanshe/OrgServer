@@ -1,0 +1,14 @@
+README.md
+*.example
+node_modules/
+.data/
+.editorconfig
+eslint.config.*
+Dockerfile
+docker-compose.yml
+start.sh
+.husky/
+.git/
+.husky/
+.github/
+.vscode/
