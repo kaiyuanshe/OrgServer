@@ -1,35 +1,75 @@
 {
   "name": "org-server",
-  "version": "0.16.0",
+  "version": "1.0.0",
   "description": "Data Server scaffold for all kinds of Organizations, built on Strapi",
   "private": true,
   "engines": {
-    "node": ">=10.0.0",
+    "node": ">=18.0.0",
     "npm": ">=6.0.0"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-react": "^3.0.2",
-    "knex": "<0.20.0",
-    "sqlite3": "latest",
-    "strapi": "3.6.5",
-    "strapi-admin": "3.6.5",
-    "strapi-connector-bookshelf": "3.6.5",
-    "strapi-plugin-ckeditor": "^0.1.0",
-    "strapi-plugin-content-manager": "3.6.5",
-    "strapi-plugin-content-type-builder": "3.6.5",
-    "strapi-plugin-documentation": "3.6.5",
-    "strapi-plugin-email": "3.6.5",
-    "strapi-plugin-upload": "3.6.5",
-    "strapi-plugin-users-permissions": "3.6.5",
-    "strapi-utils": "3.6.5"
+    "@arshiash80/strapi-plugin-iconhub": "^1.0.2",
+    "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
+    "@strapi/plugin-cloud": "~5.15.0",
+    "@strapi/plugin-color-picker": "~5.15.0",
+    "@strapi/plugin-documentation": "~5.15.0",
+    "@strapi/plugin-users-permissions": "~5.15.0",
+    "@strapi/strapi": "~5.15.0",
+    "better-sqlite3": "^11.10.0",
+    "cross-env": "^7.0.3",
+    "pg": "^8.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "strapi-location-picker": "^0.0.1",
+    "strapi-plugin-multi-select": "^2.1.1",
+    "strapi-provider-cloudflare-r2": "^0.3.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.31",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "swagger-typescript-api": "^13.2.1",
+    "tsx": "^4.19.4",
+    "typescript": "~5.8.3",
+    "zx": "^8.5.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "@tailwindcss/oxide",
+      "better-sqlite3",
+      "core-js-pure",
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{md,json,yml,js,mjs,ts,tsx}": "prettier --write"
   },
   "scripts": {
+    "prepare": "(husky || true)  &&  (cp -u .env.example .env || true)",
+    "test": "lint-staged",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "strapi": "strapi",
+    "clean": "rm -rf .cache/ .strapi/ dist/",
     "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
-  },
-  "strapi": {
-    "uuid": "d366baee-5728-4957-be2b-0e6de6b1716f"
+    "make-type": "cd src/extensions/documentation/  &&  tsx make-type documentation/1.0.0/full_documentation.json ../../../types/client/",
+    "build-type": "rm -rf types/client/  &&  npm run make-type",
+    "build": "npm run clean  &&  strapi ts:generate-types  &&  cross-env NODE_ENV=production  strapi build",
+    "start": "cross-env NODE_ENV=production  strapi start",
+    "pack-image": "docker build -t kaiyuanshe/orgserver .",
+    "database": "docker rm -f postgres-server  &&  docker run --name postgres-server -v ./.data:/var/lib/postgresql/data/ -e POSTGRES_PASSWORD=tobemodified -p 5432:5432 -d postgres",
+    "container": "docker rm -f strapi-server  &&  docker run --name strapi-server -p 1337:1337 -d kaiyuanshe/orgserver",
+    "deploy": "strapi deploy",
+    "console": "strapi console"
   }
 }
