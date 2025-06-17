@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "goods": {
+      "type": "component",
+      "component": "supplies.goods",
+      "repeatable": false,
+      "required": true
+    },
+    "custodians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "deprecatedAt": {
+      "type": "datetime"
+    }
+  }
+}
