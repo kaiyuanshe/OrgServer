@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "required": true,
+      "unique": true
+    },
+    "slogan": {
+      "type": "string",
+      "unique": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "link": {
+      "type": "string",
+      "minLength": 10,
+      "required": false,
+      "unique": true
+    },
+    "summary": {
+      "type": "text",
+      "minLength": 20,
+      "required": true,
+      "unique": true
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "messageLink": {
+      "type": "string",
+      "minLength": 10,
+      "unique": true
+    },
+    "location": {
+      "type": "component",
+      "component": "location.address",
+      "repeatable": false,
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["community", "enterprise", "government"]
+    }
+  }
+}

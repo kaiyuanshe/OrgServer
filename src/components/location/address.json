@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_location_addresses",
+  "info": {
+    "displayName": "Address",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "country": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "province": {
+      "type": "string",
+      "minLength": 2
+    },
+    "city": {
+      "type": "string",
+      "minLength": 2
+    },
+    "district": {
+      "type": "string",
+      "minLength": 2
+    },
+    "street": {
+      "type": "string",
+      "minLength": 2
+    },
+    "building": {
+      "type": "string",
+      "minLength": 2
+    },
+    "floor": {
+      "type": "string"
+    },
+    "room": {
+      "type": "string"
+    }
+  }
+}
