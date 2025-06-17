@@ -2,60 +2,59 @@
   "kind": "collectionType",
   "collectionName": "activities",
   "info": {
-    "name": "Activity",
-    "description": ""
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity"
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
+      "minLength": 2,
       "required": true,
-      "unique": true,
-      "minLength": 2
+      "unique": true
     },
     "slogan": {
       "type": "string",
-      "unique": true,
-      "minLength": 3
+      "minLength": 3,
+      "unique": true
     },
     "banner": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
     },
     "description": {
       "type": "richtext",
       "required": true,
       "minLength": 100
     },
-    "start_time": {
+    "startTime": {
       "type": "datetime",
       "required": true
     },
-    "end_time": {
+    "endTime": {
       "type": "datetime",
       "required": true
     },
     "location": {
       "type": "string",
-      "required": true,
-      "minLength": 10
+      "minLength": 10,
+      "required": true
     },
     "organizers": {
-      "plugin": "users-permissions",
-      "collection": "user"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     },
     "partnerships": {
-      "via": "activity",
-      "collection": "partnership"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partnership.partnership",
+      "mappedBy": "activity"
     }
   }
 }
