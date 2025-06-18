@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_date_periods",
+  "info": {
+    "displayName": "Period",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "startTime": {
+      "type": "time",
+      "default": "00:00:00.000"
+    },
+    "endTime": {
+      "type": "time",
+      "default": "23:59:00.000"
+    },
+    "week": {
+      "type": "enumeration",
+      "enum": ["weekdays", "weekends"]
+    }
+  },
+  "config": {}
+}

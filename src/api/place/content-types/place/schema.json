@@ -2,20 +2,20 @@
   "kind": "collectionType",
   "collectionName": "places",
   "info": {
-    "name": "Place",
-    "description": ""
+    "singularName": "place",
+    "pluralName": "places",
+    "displayName": "Place"
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
+      "minLength": 4,
       "required": true,
-      "unique": true,
-      "minLength": 4
+      "unique": true
     },
     "capacity": {
       "type": "integer",
@@ -27,40 +27,37 @@
       "required": true,
       "default": true
     },
-    "available_times": {
+    "availableTimes": {
       "type": "component",
       "repeatable": true,
       "component": "date.period",
       "required": true
     },
     "contacts": {
-      "plugin": "users-permissions",
-      "collection": "user"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     },
     "owner": {
-      "model": "organization"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
     },
     "equipments": {
       "type": "component",
-      "repeatable": true,
-      "component": "supplies.goods"
+      "component": "supplies.goods",
+      "repeatable": true
     },
     "films": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
+      "type": "media",
+      "multiple": true,
       "required": true,
-      "pluginOptions": {}
+      "allowedTypes": ["images", "videos", "files"]
     },
     "address": {
       "type": "component",
-      "repeatable": false,
       "component": "location.address",
+      "repeatable": false,
       "required": true
     }
   }
