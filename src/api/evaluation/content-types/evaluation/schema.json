@@ -2,14 +2,14 @@
   "kind": "collectionType",
   "collectionName": "evaluations",
   "info": {
-    "name": "Evaluation",
-    "description": ""
+    "singularName": "evaluation",
+    "pluralName": "evaluations",
+    "displayName": "Evaluation"
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "score": {
       "type": "integer",
@@ -23,18 +23,15 @@
       "unique": true,
       "minLength": 5
     },
-    "contribution": {
-      "model": "contribution",
-      "via": "evaluations"
-    },
     "program": {
-      "via": "evaluations",
-      "model": "program"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program.program"
     },
     "creator": {
-      "unique": true,
-      "plugin": "users-permissions",
-      "model": "user"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
