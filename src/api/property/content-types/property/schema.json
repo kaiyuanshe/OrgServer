@@ -17,6 +17,11 @@
       "repeatable": false,
       "required": true
     },
+    "account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::account.account"
+    },
     "custodians": {
       "type": "relation",
       "relation": "oneToMany",

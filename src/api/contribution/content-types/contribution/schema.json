@@ -32,6 +32,11 @@
       "relation": "oneToOne",
       "target": "api::task.task"
     },
+    "evaluations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evaluation.evaluation"
+    },
     "creator": {
       "type": "relation",
       "relation": "oneToMany",

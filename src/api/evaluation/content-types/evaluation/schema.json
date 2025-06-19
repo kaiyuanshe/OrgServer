@@ -14,14 +14,19 @@
     "score": {
       "type": "integer",
       "required": true,
-      "max": 5,
+      "default": 0,
       "min": 0,
-      "default": 0
+      "max": 5
     },
     "detail": {
       "type": "text",
-      "unique": true,
-      "minLength": 5
+      "minLength": 5,
+      "unique": true
+    },
+    "contribution": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contribution.contribution"
     },
     "program": {
       "type": "relation",

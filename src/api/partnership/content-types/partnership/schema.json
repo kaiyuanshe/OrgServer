@@ -49,6 +49,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::organization.organization"
+    },
+    "account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::account.account"
     }
   }
 }
