@@ -1,9 +1,9 @@
 # OrgServer
 
-Strapi comes with a full featured [Command Line Interface][1] (CLI) which lets you scaffold and manage your project in seconds.
+Strapi comes with a full featured [Command Line Interface][0] (CLI) which lets you scaffold and manage your project in seconds.
 
-[![Deploy to Production environment](https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml/badge.svg)][2]
-[![](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/mentioned-badge.svg)][4]
+[![Deploy to Production environment](https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml/badge.svg)][1]
+[![](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/mentioned-badge.svg)][2]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][3]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][4]
@@ -179,8 +179,9 @@ Feel free to check out the [Strapi GitHub repository][34]. Your feedback and con
 
 <sub>🤫 Psst! [Strapi is hiring][38].</sub>
 
-[1]: https://docs.strapi.io/dev-docs/cli
-[2]: https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml
+[0]: https://docs.strapi.io/dev-docs/cli
+[1]: https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml
+[2]: https://github.com/strapi-community/awesome-strapi
 [3]: https://codespaces.new/kaiyuanshe/OrgServer
 [4]: https://gitpod.io/?autostart=true#https://github.com/kaiyuanshe/OrgServer
 [5]: https://www.typescriptlang.org/

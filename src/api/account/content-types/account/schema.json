@@ -33,6 +33,11 @@
       "required": true,
       "enum": ["cash", "bank", "PayPal", "Alipay", "WeChat"]
     },
+    "program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program.program"
+    },
     "invoices": {
       "type": "media",
       "multiple": true,

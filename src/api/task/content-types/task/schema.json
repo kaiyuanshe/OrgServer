@@ -25,6 +25,11 @@
     "deadline": {
       "type": "datetime"
     },
+    "contributions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contribution.contribution"
+    },
     "assets": {
       "type": "media",
       "multiple": true,

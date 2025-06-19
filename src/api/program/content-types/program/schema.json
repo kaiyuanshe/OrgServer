@@ -13,8 +13,8 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "minLength": 2
+      "minLength": 2,
+      "required": true
     },
     "start_time": {
       "type": "datetime",
@@ -26,8 +26,8 @@
     },
     "summary": {
       "type": "text",
-      "unique": true,
-      "minLength": 5
+      "minLength": 5,
+      "unique": true
     },
     "mentors": {
       "type": "relation",
@@ -41,13 +41,18 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": ["lecture", "workshop", "exhibition"],
-      "required": true
+      "required": true,
+      "enum": ["lecture", "workshop", "exhibition"]
     },
     "place": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::place.place"
+    },
+    "evaluations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evaluation.evaluation"
     },
     "accounts": {
       "type": "relation",
