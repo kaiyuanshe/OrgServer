@@ -15,7 +15,7 @@
 ```shell
 npm i pnpm -g
 
-pnpm i @kaiyuanshe/orgserver -D
+pnpm i @open-source-bazaar/orgserver -D
 ```
 
 [1]: https://github.com/settings/tokens

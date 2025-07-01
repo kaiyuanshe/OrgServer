@@ -2,7 +2,7 @@
 
 Strapi comes with a full featured [Command Line Interface][0] (CLI) which lets you scaffold and manage your project in seconds.
 
-[![Deploy to Production environment](https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml/badge.svg)][1]
+[![Deploy to Production environment](https://github.com/Open-Source-Bazaar/OrgServer/actions/workflows/main.yml/badge.svg)][1]
 [![](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/mentioned-badge.svg)][2]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][3]
@@ -180,10 +180,10 @@ Feel free to check out the [Strapi GitHub repository][34]. Your feedback and con
 <sub>🤫 Psst! [Strapi is hiring][38].</sub>
 
 [0]: https://docs.strapi.io/dev-docs/cli
-[1]: https://github.com/kaiyuanshe/OrgServer/actions/workflows/main.yml
+[1]: https://github.com/Open-Source-Bazaar/OrgServer/actions/workflows/main.yml
 [2]: https://github.com/strapi-community/awesome-strapi
-[3]: https://codespaces.new/kaiyuanshe/OrgServer
-[4]: https://gitpod.io/?autostart=true#https://github.com/kaiyuanshe/OrgServer
+[3]: https://codespaces.new/Open-Source-Bazaar/OrgServer
+[4]: https://gitpod.io/?autostart=true#https://github.com/Open-Source-Bazaar/OrgServer
 [5]: https://www.typescriptlang.org/
 [6]: https://pnpm.io/
 [7]: https://strapi.io/
@@ -198,11 +198,11 @@ Feel free to check out the [Strapi GitHub repository][34]. Your feedback and con
 [16]: https://github.com/ckeditor/strapi-plugin-ckeditor
 [17]: https://github.com/wisnuwiry/strapi-geodata
 [18]: https://github.com/apps/settings
-[19]: https://github.com/new?template_name=OrgServer&template_owner=kaiyuanshe
-[20]: https://codespaces.new/kaiyuanshe/OrgServer
+[19]: https://github.com/new?template_name=OrgServer&template_owner=Open-Source-Bazaar
+[20]: https://codespaces.new/Open-Source-Bazaar/OrgServer
 [21]: https://github.com/FreeCodeCamp-Chengdu/FreeCodeCamp-Chengdu.github.io/blob/8df9944449002758f7ec809deeb260ce08182259/.github/workflows/main.yml#L34-L63
-[22]: https://github.com/kaiyuanshe/OrgServer/issues/new/choose
-[23]: https://github.com/kaiyuanshe/OrgServer/projects
+[22]: https://github.com/Open-Source-Bazaar/OrgServer/issues/new/choose
+[23]: https://github.com/Open-Source-Bazaar/OrgServer/projects
 [24]: https://docs.strapi.io/dev-docs/cli#strapi-develop
 [25]: https://docs.strapi.io/dev-docs/cli#strapi-start
 [26]: https://docs.strapi.io/dev-docs/cli#strapi-build

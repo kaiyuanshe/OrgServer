@@ -1,5 +1,5 @@
 {
-  "name": "@kaiyuanshe/org-server",
+  "name": "@open-source-bazaar/org-server",
   "version": "1.0.0",
   "description": "Data Server scaffold for all kinds of Organizations, built on Strapi",
   "private": true,
@@ -66,9 +66,9 @@
     "build-type": "rm -rf types/client/  &&  npm run make-type",
     "build": "npm run clean  &&  strapi ts:generate-types  &&  cross-env NODE_ENV=production  strapi build",
     "start": "cross-env NODE_ENV=production  strapi start",
-    "pack-image": "docker build -t kaiyuanshe/orgserver .",
+    "pack-image": "docker build -t open-source-bazaar/orgserver .",
     "database": "docker rm -f postgres-server  &&  docker run --name postgres-server -v ./.data:/var/lib/postgresql/data/ -e POSTGRES_PASSWORD=tobemodified -p 5432:5432 -d postgres",
-    "container": "docker rm -f strapi-server  &&  docker run --name strapi-server -p 1337:1337 -d kaiyuanshe/orgserver",
+    "container": "docker rm -f strapi-server  &&  docker run --name strapi-server -p 1337:1337 -d open-source-bazaar/orgserver",
     "deploy": "strapi deploy",
     "console": "strapi console"
   }
